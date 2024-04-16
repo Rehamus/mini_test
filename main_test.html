@@ -10,243 +10,243 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- Demo styles -->
-<style>
-    
-body {
-    padding: 0;
-    margin: 0;
-}
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
 
-.container {
-    visibility: hidden;
-    position: fixed;
-    z-index: 1000;
-    width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 20px auto 0px auto;
-    background-color: white;
-}
+        .container {
+            visibility: hidden;
+            position: fixed;
+            z-index: 1000;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 20px auto 0px auto;
+            background-color: white;
+        }
 
-.container.show {
-    visibility: visible;
-}
-
-
-.backblack {
-    visibility: hidden;
-    position: fixed;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: 70%;
-    z-index: 900;
-}
-
-.backblack.show {
-    visibility: visible;
-}
+        .container.show {
+            visibility: visible;
+        }
 
 
-.place {
+        .backblack {
+            visibility: hidden;
+            position: fixed;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 70%;
+            z-index: 900;
+        }
 
-    display: flex;
-    align-items: center;
-    background-color: #B1B2FF;
-    padding: 10px 0px 10px 0px;
-}
+        .backblack.show {
+            visibility: visible;
+        }
 
-.place>button {
-    height: 40px;
-    width: 80px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border: 2px solid #EEF1FF;
-    margin-right: 2%;
-    margin-left: auto;
-}
 
-.place>h1 {
-    color: white;
-    margin-left: 20px;
-    font-weight: 100;
-}
+        .place {
 
-.first {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            display: flex;
+            align-items: center;
+            background-color: #B1B2FF;
+            padding: 10px 0px 10px 0px;
+        }
 
-.photo>img {
-    margin-top: 20px;
-    border-radius: 5px;
-}
+        .place>button {
+            height: 40px;
+            width: 80px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid #EEF1FF;
+            margin-right: 2%;
+            margin-left: auto;
+        }
 
-.info {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
-}
+        .place>h1 {
+            color: white;
+            margin-left: 20px;
+            font-weight: 100;
+        }
 
-.info1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 130%;
-}
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.info2 {
-    margin-bottom: 10px;
-    font-size: 130%;
-}
+        .photo>img {
+            margin-top: 20px;
+            border-radius: 5px;
+        }
 
-.pos {
-    margin: 20px 0px 30px 0px;
-}
+        .info {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+        }
 
-.main_01 .swiper {
-    width: 100%;
-    height: 100%;
-    background: #000;
-}
+        .info1 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 130%;
+        }
 
-.main_01 .swiper-slide {
-    font-size: 18px;
-    color: #fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 60px;
-}
+        .info2 {
+            margin-bottom: 10px;
+            font-size: 130%;
+        }
 
-.main_01 .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-}
+        .pos {
+            margin: 20px 0px 30px 0px;
+        }
 
-.main_01 .swiper-slide .title {
-    font-size: 110px;
-    font-weight: 300;
-}
+        .main_01 .swiper {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
 
-.main_01 .swiper-slide .subtitle {
-    font-size: 55px;
-}
+        .main_01 .swiper-slide {
+            font-size: 18px;
+            color: #fff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 40px 60px;
+        }
 
-.main_01 .swiper-slide .text {
-    font-size: 28px;
-    max-width: 700px;
-    line-height: 1;
-}
+        .main_01 .parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 130%;
+            height: 100%;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
 
-.main_02 {
-    /* 스와이프 카드*/
-    margin-top: 20px;
-    border: 5px solid red;
-    position: relative;
-    height: 500px;
-    width: 100%;
-}
+        .main_01 .swiper-slide .title {
+            font-size: 110px;
+            font-weight: 300;
+        }
 
-.main_02 .box2 {
-    /* 카드 등록*/
-    position: relative;
-    top: -100%;
-    left: 100%;
-    height: 100%;
-    width: 40%;
-    background-color: white;
-    z-index: 200;
-    display: flex;
-    box-shadow: -8px 0px 8px rgba(0, 0, 0, 0.507);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid red;
-    box-sizing: border-box;
-    transition: all .4s;
-}
+        .main_01 .swiper-slide .subtitle {
+            font-size: 55px;
+        }
 
-.main_02 .box2 p {
-    /* 카드 등록*/
-    position: absolute;
-    left: 0%;
-    height: 100%;
-    width: 50%;
-    box-sizing: border-box;
-}
+        .main_01 .swiper-slide .text {
+            font-size: 28px;
+            max-width: 700px;
+            line-height: 1;
+        }
 
-.main_02 .box2 p:last-child {
-    /* 카드 등록*/
-    left: 50%;
-    height: 100%;
-    width: 50%;
-}
+        .main_02 {
+            /* 스와이프 카드*/
+            margin-top: 20px;
+            border: 5px solid red;
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
 
-.main_02 .box2 p:hover {
-    font-weight: bolder;
-    font-size: 4rem;
-    color: red;
-    border: 50px solid red;
-}
+        .main_02 .box2 {
+            /* 카드 등록*/
+            position: relative;
+            top: -100%;
+            left: 100%;
+            height: 100%;
+            width: 40%;
+            background-color: white;
+            z-index: 200;
+            display: flex;
+            box-shadow: -8px 0px 8px rgba(0, 0, 0, 0.507);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            box-sizing: border-box;
+            transition: all .4s;
+        }
 
-.main_02 .card_main {
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    background-color: rgb(12, 12, 12);
-}
+        .main_02 .box2 p {
+            /* 카드 등록*/
+            position: absolute;
+            left: 0%;
+            height: 100%;
+            width: 50%;
+            box-sizing: border-box;
+        }
 
-.main_02 .swiper {
-    width: 110%;
-    height: 100%;
-}
+        .main_02 .box2 p:last-child {
+            /* 카드 등록*/
+            left: 50%;
+            height: 100%;
+            width: 50%;
+        }
 
-.main_02 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .main_02 .box2 p:hover {
+            font-weight: bolder;
+            font-size: 4rem;
+            color: red;
+            border: 50px solid red;
+        }
 
-.main_02 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-}
+        .main_02 .card_main {
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            background-color: rgb(12, 12, 12);
+        }
 
-.main_02 .swiper-slide div {
-    position: absolute;
-    top: 90%;
-    width: 100%;
-    height: 20%;
-}
-.nextmap > div{
-    display: inline-block;
-    height: 400px;
-    width: 300px;
-}
-</style>
+        .main_02 .swiper {
+            width: 110%;
+            height: 100%;
+        }
+
+        .main_02 .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main_02 .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .main_02 .swiper-slide div {
+            position: absolute;
+            top: 90%;
+            width: 100%;
+            height: 20%;
+        }
+
+        .nextmap>div {
+            display: inline-block;
+            height: 400px;
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
@@ -255,7 +255,6 @@ body {
         <div class="place">
             <h1>팀원소개</h1>
             <button id="updatebtn">수정</button>
-            <button id="new_btn">등록</button>
             <button id="deletebtn">삭제</button>
         </div>
     </div>
@@ -317,15 +316,18 @@ body {
     </section>
     <div class="nextmap">
         <div>
-            <input type="text" id="photo_n"placeholder="photo">
-            <input type="text" id="name_n"placeholder="name">
-            <input type="text" id="birthday_n"placeholder="birthday">
-            <input type="text" id="mbti_n"placeholder="mbti">
-            <input type="text" id="strengths_n"placeholder="strengths">
-            <input type="text" id="collaborationStyle_n"placeholder="collaborationStyle">
-            <input type="text" id="blogURL_n"placeholder="blogURL">
+            <input type="text" id="photo_n" placeholder="photo">
+            <input type="text" id="name_n" placeholder="name">
+            <input type="text" id="birthday_n" placeholder="birthday">
+            <input type="text" id="mbti_n" placeholder="mbti">
+            <input type="text" id="strengths_n" placeholder="strengths">
+            <input type="text" id="collaborationStyle_n" placeholder="collaborationStyle">
+            <input type="text" id="blogURL_n" placeholder="blogURL">
             <button id="new_btn">등록</button>
         </div>
+        <select name="" id="index_s">
+            <option selected>-- 선택 --</option>
+        </select>
     </div>
 
     <!-- Swiper JS -->
@@ -379,117 +381,117 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     $('.box2').click(function () {
-    $('.container').addClass('show')
-    $('.backblack').addClass('show')
-});
-$('.backblack').click(function () {
-    $('.container').removeClass('show')
-    $('.backblack').removeClass('show')
-});
+        $('.container').addClass('show')
+        $('.backblack').addClass('show')
+    });
+    $('.backblack').click(function () {
+        $('.container').removeClass('show')
+        $('.backblack').removeClass('show')
+    });
 
 
-var swiper = new Swiper(".bottom_mySwiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
-    coverflowEffect: {
-        rotate: 20,
-        stretch: 20,
-        depth: 10,
-        modifier: 1,
-    },
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-var swiper = new Swiper(".top_mySwiper", {
-    speed: 600,
-    parallax: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+    var swiper = new Swiper(".bottom_mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 20,
+            depth: 10,
+            modifier: 1,
+        },
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+    var swiper = new Swiper(".top_mySwiper", {
+        speed: 600,
+        parallax: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 </script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-   // TODO: Add SDKs for Firebase products that you want to use
-   // https://firebase.google.com/docs/web/setup#available-libraries
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-   // Your web app's Firebase configuration
-   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-   const firebaseConfig = {
-       apiKey: "AIzaSyCXk7T2TbT4ja4Xs6JTGiYBqwEdaGDRyZg",
-       authDomain: "miniteamwebsite.firebaseapp.com",
-       projectId: "miniteamwebsite",
-       storageBucket: "miniteamwebsite.appspot.com",
-       messagingSenderId: "932241178765",
-       appId: "1:932241178765:web:add7a2d24be400fb15e2c4",
-       measurementId: "G-HHKFJGGTNY"
-   };
-   // Initialize Firebase
-   const app = initializeApp(firebaseConfig);
-   const analytics = getAnalytics(app);
-   const db = getFirestore(app);
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXk7T2TbT4ja4Xs6JTGiYBqwEdaGDRyZg",
+        authDomain: "miniteamwebsite.firebaseapp.com",
+        projectId: "miniteamwebsite",
+        storageBucket: "miniteamwebsite.appspot.com",
+        messagingSenderId: "932241178765",
+        appId: "1:932241178765:web:add7a2d24be400fb15e2c4",
+        measurementId: "G-HHKFJGGTNY"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
 
-   // document.getElementById('updatebtn').addEventListener('click', async () => {
-   $('#updatebtn').click(async function () {
-       let photo = document.querySelector('img').getAttribute('src');
-       let name = $('#name').val();
-       let birthday = $('#birthday').val();
-       let mbti = $('#mbti').val();
-       let strengths = $('#strengths').val();
-       let collaborationStyle = $('#collaborationStyle').val();
-       let blogURL = $('#blogURL').val();
-       let index = $('#index').val();
+    // document.getElementById('updatebtn').addEventListener('click', async () => {
+    $('#updatebtn').click(async function () {
+        let photo = document.querySelector('img').getAttribute('src');
+        let name = $('#name').val();
+        let birthday = $('#birthday').val();
+        let mbti = $('#mbti').val();
+        let strengths = $('#strengths').val();
+        let collaborationStyle = $('#collaborationStyle').val();
+        let blogURL = $('#blogURL').val();
+        let index = $('#index').val();
 
-       let up = {
-           photo: photo,
-           name: name,
-           birthday: birthday,
-           mbti: mbti,
-           strengths: strengths,
-           collaborationStyle: collaborationStyle,
-           blogURL: blogURL,
-           index: index
-       };
-       console.log(up)
-       const updateID = doc(db, "teamMembers", index);
-       await updateDoc(updateID, up);
+        let up = {
+            photo: photo,
+            name: name,
+            birthday: birthday,
+            mbti: mbti,
+            strengths: strengths,
+            collaborationStyle: collaborationStyle,
+            blogURL: blogURL,
+            index: index
+        };
+        console.log(up)
+        const updateID = doc(db, "teamMembers", index);
+        await updateDoc(updateID, up);
 
-       alert("수정했습니다!");
-       window.location.reload();
-   });
+        alert("수정했습니다!");
+        window.location.reload();
+    });
 
 
-   // 스냅샷과 쿼리로 문서 id 출력.
-   const q = query(collection(db, "teamMembers"), where("index", "==", "1713233837953.1807"));
-   const querySnapshot = await getDocs(q);
-   querySnapshot.forEach((doc) => {
-       let row = doc.data();
+    // 스냅샷과 쿼리로 문서 id 출력.
+    const q = query(collection(db, "teamMembers"), where("index", "==", "1713233837953.1807"));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        let row = doc.data();
 
-       let photo = row['photo']
-       let name = row['name']
-       let birthday = row['birthday']
-       let mbti = row['mbti']
-       let strengths = row['strengths']
-       let collaborationStyle = row['collaborationStyle']
-       let blogURL = row['blogURL']
-       let index = row['index']
+        let photo = row['photo']
+        let name = row['name']
+        let birthday = row['birthday']
+        let mbti = row['mbti']
+        let strengths = row['strengths']
+        let collaborationStyle = row['collaborationStyle']
+        let blogURL = row['blogURL']
+        let index = row['index']
 
-       let temp_html = `
+        let temp_html = `
        <div class="box">
            <div class="first">
                <div class="photo">
@@ -509,85 +511,93 @@ import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where
            <div class="info2"><input type="hidden" id="index" value="${index}"></div>
        </div>`
 
-       $('#container').append(temp_html);
-   });
-   document.getElementById('deletebtn').addEventListener('click', async () => {
-       const name = "이세비";
-       const birthday = "991120";
-       const mbti = "ISTP";
-       const strengths = "책임감";
-       const collaborationStyle = "브레인스토밍 좋아합니다.";
-       const blogURL = "Tistory";
+        $('#container').append(temp_html);
+    });
+    document.getElementById('deletebtn').addEventListener('click', async () => {
+        const name = "이세비";
+        const birthday = "991120";
+        const mbti = "ISTP";
+        const strengths = "책임감";
+        const collaborationStyle = "브레인스토밍 좋아합니다.";
+        const blogURL = "Tistory";
 
-       try {
-           const docRef = await addDoc(collection(db, "teamMembers"), {
-               name: name,
-               birthday: birthday,
-               mbti: mbti,
-               strengths: strengths,
-               collaborationStyle: collaborationStyle,
-               blogURL: blogURL
-           });
-           console.log("Document written with ID: ", docRef.id);
-       } catch (e) {
-           console.error("Error adding document: ", e);
-       }
-   });
+        try {
+            const docRef = await addDoc(collection(db, "teamMembers"), {
+                name: name,
+                birthday: birthday,
+                mbti: mbti,
+                strengths: strengths,
+                collaborationStyle: collaborationStyle,
+                blogURL: blogURL
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    });
 
-   // 카드 가져오기
-   async function fetchData() {
-       const querySnapshot = await getDocs(collection(db, "teamMembers"));
-       querySnapshot.forEach((doc) => {
-           const row = doc.data();
+    // 카드 가져오기
+    async function fetchData() {
+        const querySnapshot = await getDocs(collection(db, "teamMembers"));
+        querySnapshot.forEach((doc) => {
+            const row = doc.data();
 
-           let photo = row['photo']
-           let name = row['name']
-           let birthday = row['birthday']
-           let mbti = row['mbti']
-           let strengths = row['strengths']
-           let collaborationStyle = row['collaborationStyle']
-           let blogURL = row['blogURL']
-           let index = row['index']
+            let photo = row['photo']
+            let name = row['name']
+            let birthday = row['birthday']
+            let mbti = row['mbti']
+            let strengths = row['strengths']
+            let collaborationStyle = row['collaborationStyle']
+            let blogURL = row['blogURL']
+            let index = row['index']
 
-           const card = `
+
+            const card = `
        <div class="swiper-slide"><img
        src="${photo}" alt="">
        <div>${name}<button>01</button></div>
                    </div>`;
 
-           $('#swipe_card').prepend(card);
-       });
-   }
+            const del = `
+        <option selected>${index}</option>`;
 
-   $('#new_btn').click(async function () {
-    let photo = $('#photo_n').val();
-    let name = $('#name_n').val();
-    let birthday = $('#birthday_n').val();
-    let mbti = $('#mbti_n').val();
-    let strengths = $('#strengths_n').val();
-    let collaborationStyle = $('#collaborationStyle_n').val();
-    let blogURL = $('#blogURL_n').val();
-    let index = $('#index').val();
+            $('#swipe_card').prepend(card);
 
-    let up = {
-        photo: photo,
-        name: name,
-        birthday: birthday,
-        mbti: mbti,
-        strengths: strengths,
-        collaborationStyle: collaborationStyle,
-        blogURL: blogURL,
-        index: index
-    };
+            $('#index_s').append(del);
+        });
+    }
 
-    await setDoc(doc(db, "teamMembers", index), up);
+    $('#new_btn').click(async function () {
+        let photo = $('#photo_n').val();
+        let name = $('#name_n').val();
+        let birthday = $('#birthday_n').val();
+        let mbti = $('#mbti_n').val();
+        let strengths = $('#strengths_n').val();
+        let collaborationStyle = $('#collaborationStyle_n').val();
+        let blogURL = $('#blogURL_n').val();
+        let index = String(Date.now() + Math.random())
 
-    alert("태스트1");
+        let up = {
+            photo: photo,
+            name: name,
+            birthday: birthday,
+            mbti: mbti,
+            strengths: strengths,
+            collaborationStyle: collaborationStyle,
+            blogURL: blogURL,
+            index: index
+        };
 
-    window.location.reload();
-});
+        await setDoc(doc(db, "teamMembers", index), up);
 
-   fetchData();// 함수 실행
+        alert("태스트1");
+
+        window.location.reload();
+
+
+    });
+
+    fetchData();// 함수 실행
 </script>
 
 </html>
