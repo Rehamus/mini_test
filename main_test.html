@@ -126,7 +126,10 @@
             color: #fff;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            padding: 40px 60px;
+            transition-duration: 0ms;
+            transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1);
+            z-index: 1;
+            margin-right: 30px;
         }
 
         .main_01 .parallax-bg {
@@ -229,8 +232,8 @@
 
         .main_02 .swiper-slide img {
             display: block;
-            width: 100%;
-            height: 80%;
+            width: 390px;
+            height: 500px;
             object-fit: cover;
         }
 
@@ -255,6 +258,20 @@
         <div class="place">
             <h1>팀원소개</h1>
             <button id="updatebtn">수정</button>
+            <button id="deletebtn">삭제</button>
+        </div>
+    </div>
+
+    <div class="backblack">
+    </div>
+
+    <!-- 매인 상단 -->
+    <!-- 매인 상새패이지 -->
+    <div class="container" id="container">
+        <div class="place">
+            <h1>팀원소개</h1>
+            <button id="updatebtn">수정</button>
+
             <button id="deletebtn">삭제</button>
         </div>
     </div>
@@ -330,84 +347,96 @@
         </select>
     </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="main_01 swiper top_mySwiper">
+        <div class="parallax-bg" style="
+              background-image: url(https://images.pexels.com/photos/40815/youth-active-jump-happy-40815.jpeg?auto=compress&cs=tinysrgb&w=600);
+            " data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">9해조</div>
+                <div class="subtitle" data-swiper-parallax="-200">팀소개</div>
+                <div class="text" data-swiper-parallax="-100">
+                    <p>
+                        모두 I로 구성된 백엔드 개발자 지망생들
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="subtitle" data-swiper-parallax="-200">팀목표</div>
+                <div class="text" data-swiper-parallax="-100">
+                    <p>
+                        <li>- github으로 협업 연습</li>
+                        <li>- 잔디 많이 키우기</li>
+                        <li>- 서로 서로 모르는 거 물어보고 답해주기</li>
+                        <li>- 존중해주고 이쁜 말로 의견 내기</li>
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- 매인 하단 -->
+    <section class="main_02">
+        <section class="card_main">
+            <div class="swiper bottom_mySwiper">
+                <div class="swiper-wrapper" id="swipe_card">
+                    <div class="swiper-slide"><img
+                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
+                        <div>내용<button>01</button></div>
+                    </div>
+                    <div class="swiper-slide"><img
+                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
+                        <div>내용<button>01</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <p>카드 등록 </p>
+                <p>카드 수정 </p>
+            </div>
+        </section>
+    </section>
+    <div class="nextmap">
+        <div>
+            <input type="text" id="photo_n" placeholder="photo">
+            <input type="text" id="name_n" placeholder="name">
+            <input type="text" id="birthday_n" placeholder="birthday">
+            <input type="text" id="mbti_n" placeholder="mbti">
+            <input type="text" id="strengths_n" placeholder="strengths">
+            <input type="text" id="collaborationStyle_n" placeholder="collaborationStyle">
+            <input type="text" id="blogURL_n" placeholder="blogURL">
+            <button id="new_btn">등록</button>
+        </div>
+        <select name="" id="index_s">
+            <option selected>-- 선택 --</option>
+        </select>
+    </div>
+
+
 
     <!-- Initialize Swiper -->
-    <script>
-        $('.box2').click(function () {
-            $('.container').addClass('show')
-            $('.backblack').addClass('show')
-        });
-        $('.backblack').click(function () {
-            $('.container').removeClass('show')
-            $('.backblack').removeClass('show')
-        });
 
 
-        var swiper = new Swiper(".bottom_mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 4,
-            spaceBetween: 30,
-            coverflowEffect: {
-                rotate: 20,
-                stretch: 20,
-                depth: 10,
-                modifier: 1,
-            },
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-        var swiper = new Swiper(".top_mySwiper", {
-            speed: 600,
-            parallax: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+
     $('.box2').click(function () {
         $('.container').addClass('show')
         $('.backblack').addClass('show')
+
     });
     $('.backblack').click(function () {
         $('.container').removeClass('show')
         $('.backblack').removeClass('show')
+
     });
 
-
-    var swiper = new Swiper(".bottom_mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 4,
-        spaceBetween: 30,
-        coverflowEffect: {
-            rotate: 20,
-            stretch: 20,
-            depth: 10,
-            modifier: 1,
-        },
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
     var swiper = new Swiper(".top_mySwiper", {
         speed: 600,
         parallax: true,
@@ -420,12 +449,36 @@
             prevEl: ".swiper-button-prev",
         },
     });
+
+    var swiper = new Swiper(".bottom_mySwiper", {
+        effect: "coverflow",
+
+        centeredSlides: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        autoHeight: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 20,
+            depth: 10,
+            modifier: 1,
+        },
+        slidesOffsetBefore: 3,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+
 </script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+    import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -475,9 +528,9 @@
         window.location.reload();
     });
 
-
+    let index_s = $('#index_s').val();// id 값 인식안됌
     // 스냅샷과 쿼리로 문서 id 출력.
-    const q = query(collection(db, "teamMembers"), where("index", "==", "1713233837953.1807"));
+    const q = query(collection(db, "teamMembers"), where("index", "==", "1713233837953."));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         let row = doc.data();
@@ -513,11 +566,27 @@
 
         $('#container').append(temp_html);
     });
-
     document.getElementById('deletebtn').addEventListener('click', async () => {
-        // let index = $('.index').val();
-        await deleteDoc(doc(db, "teamMembers", "1713257748601.303"));
-        alert("태스트2");
+        const name = "이세비";
+        const birthday = "991120";
+        const mbti = "ISTP";
+        const strengths = "책임감";
+        const collaborationStyle = "브레인스토밍 좋아합니다.";
+        const blogURL = "Tistory";
+
+        try {
+            const docRef = await addDoc(collection(db, "teamMembers"), {
+                name: name,
+                birthday: birthday,
+                mbti: mbti,
+                strengths: strengths,
+                collaborationStyle: collaborationStyle,
+                blogURL: blogURL
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
     });
 
     // 카드 가져오기
@@ -535,9 +604,8 @@
             let blogURL = row['blogURL']
             let index = row['index']
 
-
             const card = `
-       <div class="swiper-slide"><img
+       <div class="swiper-slide" id="swipe_card"><img
        src="${photo}" alt="">
        <div>${name}<button>01</button></div>
                    </div>`;
