@@ -327,6 +327,7 @@
                         <input type="text" id="blogURL_n" placeholder="blogURL">
                         <button id="new_btn">등록</button>
                     </div>
+                    <!-- <button id="${index}" class="popup" hidden>수정</button> -->
                     <select name="" id="index_s">
                         <option selected>-- 선택 --</option>
                     </select>
@@ -405,6 +406,7 @@
     selectElement.addEventListener('change', (event) => {
         // 선택된 index
         const selectIndex = event.target.value;
+        console.log(selectIndex)
         fetchByIndex(selectIndex)
         document.getElementById(selectIndex).click();
     });
@@ -516,10 +518,8 @@
         </div>`;
 
             const del = `
-        <option selected>${index}</option>`;
-
+        <option selected value="${index}">${name}</option>`;
             $('#swipe_card').prepend(card);
-
             $('#index_s').append(del);
 
             $('.bottom_mySwiper div div div').click(function () {
