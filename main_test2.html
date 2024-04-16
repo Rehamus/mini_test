@@ -254,30 +254,6 @@
 
     // document.getElementById('updatebtn').addEventListener('click', async () => {
     $('#updatebtn').click(async function () {
-        // 정보 하나 입력
-        // const photo = "https://cdn-icons-png.flaticon.com/128/1108/1108856.png"
-        // const name = "라미";
-        // const birthday = "950101";
-        // const mbti = "INTP";
-        // const strengths = "호기심";
-        // const collaborationStyle = "A";
-        // const blogURL = "Github Pages";
-        // const index = String(Date.now() + Math.random());   
-        // try {
-        //     const docRef = await setDoc(doc(db, "teamMembers", index), {
-        //         photo: photo,
-        //         name: name,
-        //         birthday: birthday,
-        //         mbti: mbti,
-        //         strengths: strengths,
-        //         collaborationStyle: collaborationStyle,
-        //         blogURL: blogURL,
-        //         index: index
-        //     });
-        // } catch (e) {
-        //     console.error("Error adding document: ", e);
-        // }    
-
         let photo = document.querySelector('img').getAttribute('src');
         let name = $('#name').val();
         let birthday = $('#birthday').val();
@@ -311,7 +287,6 @@
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         let row = doc.data();
-        // console.log(row);
 
         let photo = row['photo']
         let name = row['name']
@@ -321,8 +296,6 @@
         let collaborationStyle = row['collaborationStyle']
         let blogURL = row['blogURL']
         let index = row['index']
-
-        // 백틱. temp_html은 문자열.
 
         let temp_html = `
         <div class="box">
