@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Demo styles -->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            visibility: hidden;
+            position: fixed;
+            z-index: 1000;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 20px auto 0px auto;
+            background-color: white;
+        }
+
+        .container.show {
+            visibility: visible;
+        }
+
+
+        .backblack {
+            visibility: hidden;
+            position: fixed;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 70%;
+            z-index: 900;
+        }
+
+        .backblack.show {
+            visibility: visible;
+        }
+
+
+        .place {
+
+            display: flex;
+            align-items: center;
+            background-color: #B1B2FF;
+            padding: 10px 0px 10px 0px;
+        }
+
+        .place>button {
+            height: 40px;
+            width: 80px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid #EEF1FF;
+            margin-right: 2%;
+            margin-left: auto;
+        }
+
+        .place>h1 {
+            color: white;
+            margin-left: 20px;
+            font-weight: 100;
+        }
+
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo>img {
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .info {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+        }
+
+        .info1 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            /* font-size: 130%; */
+        }
+
+        .info2 {
+            margin-bottom: 10px;
+            /* font-size: 130%; */
+        }
+
+        .pos {
+            margin: 20px 0px 30px 0px;
+        }
+
+        .main_01 .swiper {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+
+        .main_01 .swiper-slide {
+            font-size: 18px;
+            color: #fff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            transition-duration: 0ms;
+            transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1);
+            z-index: 1;
+            margin-right: 30px;
+        }
+
+        .main_01 .parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 130%;
+            height: 100%;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main_01 .swiper-slide .title {
+            font-size: 110px;
+            font-weight: 300;
+        }
+
+        .main_01 .swiper-slide .subtitle {
+            font-size: 55px;
+        }
+
+        .main_01 .swiper-slide .text {
+            font-size: 28px;
+            max-width: 700px;
+            line-height: 1;
+        }
+
+        .main_02 {
+            /* 스와이프 카드*/
+            margin-top: 20px;
+            border: 5px solid red;
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+
+        .main_02 .box2 {
+            /* 카드 등록*/
+            position: relative;
+            top: -100%;
+            left: 100%;
+            height: 100%;
+            width: 40%;
+            background-color: white;
+            z-index: 200;
+            display: flex;
+            box-shadow: -8px 0px 8px rgba(0, 0, 0, 0.507);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            box-sizing: border-box;
+            transition: all .4s;
+        }
+
+        .main_02 .box2 p {
+            /* 카드 등록*/
+            position: absolute;
+            left: 0%;
+            height: 100%;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .main_02 .box2 p:last-child {
+            /* 카드 등록*/
+            left: 50%;
+            height: 100%;
+            width: 50%;
+        }
+
+        .main_02 .box2 p:hover {
+            font-weight: bolder;
+            font-size: 4rem;
+            color: red;
+            border: 50px solid red;
+        }
+
+        .main_02 .card_main {
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            background-color: rgb(12, 12, 12);
+        }
+
+        .main_02 .swiper {
+            width: 110%;
+            height: 100%;
+        }
+
+        .main_02 .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main_02 .swiper-slide img {
+            display: block;
+            width: 390px;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .main_02 .swiper-slide div {
+            position: absolute;
+            top: 90%;
+            width: 100%;
+            height: 20%;
+        }
+
+        .nextmap>div {
+            display: inline-block;
+            height: 400px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 매인 상새패이지 -->
+    <div class="container" id="container">
+        <div class="place">
+            <h1>팀원소개</h1>
+            <button id="updatebtn">수정</button>
+            <button id="deletebtn">삭제</button>
+        </div>
+        <div class="container2" id="container2"></div>
+    </div>
+
+    <div class="backblack">
+    </div>
+
+    <!-- 매인 상단 -->
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="main_01 swiper top_mySwiper">
+        <div class="parallax-bg" style="
+              background-image: url(https://images.pexels.com/photos/40815/youth-active-jump-happy-40815.jpeg?auto=compress&cs=tinysrgb&w=600);
+            " data-swiper-parallax="-23%"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">9해조</div>
+                <div class="subtitle" data-swiper-parallax="-200">팀소개</div>
+                <div class="text" data-swiper-parallax="-100">
+                    <p>
+                        모두 I로 구성된 백엔드 개발자 지망생들
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="subtitle" data-swiper-parallax="-200">팀목표</div>
+                <div class="text" data-swiper-parallax="-100">
+                    <p>
+                        <li>- github으로 협업 연습</li>
+                        <li>- 잔디 많이 키우기</li>
+                        <li>- 서로 서로 모르는 거 물어보고 답해주기</li>
+                        <li>- 존중해주고 이쁜 말로 의견 내기</li>
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- 매인 하단 -->
+    <section class="main_02">
+        <section class="card_main">
+            <div class="swiper bottom_mySwiper">
+                <div class="swiper-wrapper" id="swipe_card">
+                    <div class="swiper-slide"><img
+                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
+                        <div>내용<button>01</button></div>
+                    </div>
+                    <div class="swiper-slide"><img
+                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
+
+                        <div>내용<button class="popup"></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="nextmap">
+                    <div>
+                        <input type="text" id="photo_n" placeholder="photo">
+                        <input type="text" id="name_n" placeholder="name">
+                        <input type="text" id="birthday_n" placeholder="birthday">
+                        <input type="text" id="mbti_n" placeholder="mbti">
+                        <input type="text" id="strengths_n" placeholder="strengths">
+                        <input type="text" id="collaborationStyle_n" placeholder="collaborationStyle">
+                        <input type="text" id="blogURL_n" placeholder="blogURL">
+                        <button id="new_btn">등록</button>
+                    </div>
+                    <select name="" id="index_s">
+                        <option selected>-- 선택 --</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+<!-- 프로필 스와이퍼 -->
+<script>
+    var swiper = new Swiper(".top_mySwiper", {
+        speed: 600,
+        parallax: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    var swiper = new Swiper(".bottom_mySwiper", {
+        effect: "coverflow",
+
+        centeredSlides: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        autoHeight: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 20,
+            depth: 10,
+            modifier: 1,
+        },
+        slidesOffsetBefore: 3,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXk7T2TbT4ja4Xs6JTGiYBqwEdaGDRyZg",
+        authDomain: "miniteamwebsite.firebaseapp.com",
+        projectId: "miniteamwebsite",
+        storageBucket: "miniteamwebsite.appspot.com",
+        messagingSenderId: "932241178765",
+        appId: "1:932241178765:web:add7a2d24be400fb15e2c4",
+        measurementId: "G-HHKFJGGTNY"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+
+    // 드롭박스 선택 시 수정화면 띄움.
+    const selectElement = document.getElementById('index_s');
+    selectElement.addEventListener('change', (event) => {
+        // 선택된 index
+        const selectIndex = event.target.value;
+        fetchByIndex(selectIndex)
+        document.getElementById(selectIndex).click();
+    });
+
+    // 스냅샷과 쿼리로 문서 출력.
+    async function fetchByIndex(e) {
+        const q = query(collection(db, "teamMembers"), where("index", "==", e));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            let row = doc.data();
+
+            let photo = row['photo']
+            let name = row['name']
+            let birthday = row['birthday']
+            let mbti = row['mbti']
+            let strengths = row['strengths']
+            let collaborationStyle = row['collaborationStyle']
+            let blogURL = row['blogURL']
+            let index = row['index']
+
+            let temp_html = `
+       <div class="box">
+           <div class="first">
+               <div class="photo">
+                   <img id="photo" src="${photo}" alt="사진" width="300px" height="auto">
+               </div>
+               <div class="info">
+                   <div class="info1">사진 주소<input type="text" id="photo" value="${photo}"> <span id="ph"></span></div>
+                   <div class="info1">이름<input type="text" id="name" value="${name}"> <span id="ph"></span></div>
+                   <div class="info1">생년월일<input type="text" id="birthday" value="${birthday}"><span id="time"></span></div>
+                   <div class="info1">MBTI<input type="text" id="mbti" value="${mbti}"><span id="scores"></span></div>
+               </div>
+           </div>
+       </div>
+       <div class="character">
+           <div class="info2">장점<input type="text" id="strengths" value="${strengths}"></div>
+           <div class="info2">협업 스타일<input type="text" id="collaborationStyle" value="${collaborationStyle}"></div>
+           <div class="info2">블로그<input type="text" id="blogURL" value="${blogURL}"></div>
+           <div class="info2"><input type="hidden" id="index" value="${index}"></div>
+       </div>`
+            $('#container2').empty();
+            $('#container2').append(temp_html);
+        });
+    }
+
+    // 수정
+    // document.getElementById('updatebtn').addEventListener('click', async () => {
+    $('#updatebtn').click(async function () {
+        let photo = document.querySelector('img').getAttribute('src');
+        let name = $('#name').val();
+        let birthday = $('#birthday').val();
+        let mbti = $('#mbti').val();
+        let strengths = $('#strengths').val();
+        let collaborationStyle = $('#collaborationStyle').val();
+        let blogURL = $('#blogURL').val();
+        let index = $('#index').val();
+
+        let up = {
+            photo: photo,
+            name: name,
+            birthday: birthday,
+            mbti: mbti,
+            strengths: strengths,
+            collaborationStyle: collaborationStyle,
+            blogURL: blogURL,
+            index: index
+        };
+        console.log(up)
+        const updateID = doc(db, "teamMembers", index);
+        await updateDoc(updateID, up);
+
+        alert("수정했습니다!");
+        window.location.reload();
+    });
+
+    // 삭제
+    document.getElementById('deletebtn').addEventListener('click', async () => {
+        let index = $('#index').val();
+        console.log(index)
+        let result = confirm("삭제하시겠습니까?");
+        if (result) {
+            await deleteDoc(doc(db, "teamMembers", index));
+            alert("삭제했습니다!");
+            window.location.reload();
+        }
+    });
+
+    // 카드 가져오기(읽기)
+    async function fetchData() {
+        const querySnapshot = await getDocs(collection(db, "teamMembers"));
+        querySnapshot.forEach((doc) => {
+            const row = doc.data();
+
+            let photo = row['photo']
+            let name = row['name']
+            let birthday = row['birthday']
+            let mbti = row['mbti']
+            let strengths = row['strengths']
+            let collaborationStyle = row['collaborationStyle']
+            let blogURL = row['blogURL']
+            let index = row['index']
+
+            const card = `
+       <div class="swiper-slide" id="swipe_card"><img
+       src="${photo}" alt="">
+       <div>${name}
+       <button id="${index}" class="popup">수정</button>
+       </div>
+        </div>`;
+
+            const del = `
+        <option selected>${index}</option>`;
+
+            $('#swipe_card').prepend(card);
+
+            $('#index_s').append(del);
+
+            $('.bottom_mySwiper div div div').click(function () {
+                $('.container').addClass('show')
+                $('.backblack').addClass('show')
+
+            });
+            $('.backblack').click(function () {
+                $('.container').removeClass('show')
+                $('.backblack').removeClass('show')
+
+            });
+        });
+    }
+
+    // 생성(회원 등록)
+    $('#new_btn').click(async function () {
+        let photo = $('#photo_n').val();
+        let name = $('#name_n').val();
+        let birthday = $('#birthday_n').val();
+        let mbti = $('#mbti_n').val();
+        let strengths = $('#strengths_n').val();
+        let collaborationStyle = $('#collaborationStyle_n').val();
+        let blogURL = $('#blogURL_n').val();
+        let index = String(Date.now() + Math.random())
+
+        let up = {
+            photo: photo,
+            name: name,
+            birthday: birthday,
+            mbti: mbti,
+            strengths: strengths,
+            collaborationStyle: collaborationStyle,
+            blogURL: blogURL,
+            index: index
+        };
+
+        await setDoc(doc(db, "teamMembers", index), up);
+
+        alert("가입했습니다!");
+
+        window.location.reload();
+
+
+    });
+
+    fetchData();// 함수 실행
+</script>
+
+</html>
