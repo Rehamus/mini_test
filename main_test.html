@@ -241,7 +241,11 @@ body {
     width: 100%;
     height: 20%;
 }
-
+.nextmap > div{
+    display: inline-block;
+    height: 400px;
+    width: 300px;
+}
 </style>
 </head>
 
@@ -311,7 +315,18 @@ body {
             </div>
         </section>
     </section>
-
+    <div class="nextmap">
+        <div>
+            <input type="text" id="photo_n"placeholder="photo">
+            <input type="text" id="name_n"placeholder="name">
+            <input type="text" id="birthday_n"placeholder="birthday">
+            <input type="text" id="mbti_n"placeholder="mbti">
+            <input type="text" id="strengths_n"placeholder="strengths">
+            <input type="text" id="collaborationStyle_n"placeholder="collaborationStyle">
+            <input type="text" id="blogURL_n"placeholder="blogURL">
+            <button id="new_btn">등록</button>
+        </div>
+    </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -405,8 +420,8 @@ var swiper = new Swiper(".top_mySwiper", {
 });
 </script>
 <script type="module">
-   // Import the functions you need from the SDKs you need
-   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    // Import the functions you need from the SDKs you need
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
@@ -495,8 +510,6 @@ import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where
        </div>`
 
        $('#container').append(temp_html);
-
-
    });
    document.getElementById('deletebtn').addEventListener('click', async () => {
        const name = "이세비";
@@ -547,13 +560,13 @@ import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where
    }
 
    $('#new_btn').click(async function () {
-    let photo = document.querySelector('img').getAttribute('src');
-    let name = $('#name').val();
-    let birthday = $('#birthday').val();
-    let mbti = $('#mbti').val();
-    let strengths = $('#strengths').val();
-    let collaborationStyle = $('#collaborationStyle').val();
-    let blogURL = $('#blogURL').val();
+    let photo = $('#photo_n').val();
+    let name = $('#name_n').val();
+    let birthday = $('#birthday_n').val();
+    let mbti = $('#mbti_n').val();
+    let strengths = $('#strengths_n').val();
+    let collaborationStyle = $('#collaborationStyle_n').val();
+    let blogURL = $('#blogURL_n').val();
     let index = $('#index').val();
 
     let up = {
