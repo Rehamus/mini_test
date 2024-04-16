@@ -306,12 +306,12 @@
                 <div class="swiper-wrapper" id="swipe_card">
                     <div class="swiper-slide"><img
                             src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
-                        <div>내용<button>01</button></div>
+                        <div>내용<button hidden>01</button></div>
                     </div>
                     <div class="swiper-slide"><img
                             src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
 
-                        <div>내용<button class="popup"></button></div>
+                        <div>내용<button class="popup" hidden></button></div>
                     </div>
                 </div>
             </div>
@@ -432,18 +432,18 @@
                    <img id="photo" src="${photo}" alt="사진" width="300px" height="auto">
                </div>
                <div class="info">
-                   <div class="info1">사진 주소<input type="text" id="photo" value="${photo}"> <span id="ph"></span></div>
-                   <div class="info1">이름<input type="text" id="name" value="${name}"> <span id="ph"></span></div>
-                   <div class="info1">생년월일<input type="text" id="birthday" value="${birthday}"><span id="time"></span></div>
-                   <div class="info1">MBTI<input type="text" id="mbti" value="${mbti}"><span id="scores"></span></div>
+                   <div class="info1"><input type="text" id="photo" value="${photo}"placeholder="photo"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="name" value="${name}" placeholder="name"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="birthday" value="${birthday}" placeholder="birthday"><span id="time"></span></div>
+                   <div class="info1"><input type="text" id="mbti" value="${mbti}" placeholder="mbti"><span id="scores"></span></div>
                </div>
            </div>
        </div>
        <div class="character">
-           <div class="info2">장점<input type="text" id="strengths" value="${strengths}"></div>
-           <div class="info2">협업 스타일<input type="text" id="collaborationStyle" value="${collaborationStyle}"></div>
-           <div class="info2">블로그<input type="text" id="blogURL" value="${blogURL}"></div>
-           <div class="info2"><input type="hidden" id="index" value="${index}"></div>
+           <div class="info2"><input type="text" id="strengths" value="${strengths}" placeholder="strengths"></div>
+           <div class="info2"><input type="text" id="collaborationStyle" value="${collaborationStyle}" placeholder="collaborationStyle"></div>
+           <div class="info2"><input type="text" id="blogURL" value="${blogURL}" placeholder="blogURL"></div>
+           <div class="info2"><input type="hidden" id="index" value="${index}" placeholder="index"></div>
        </div>`
             $('#container2').empty();
             $('#container2').append(temp_html);
@@ -511,7 +511,7 @@
        <div class="swiper-slide" id="swipe_card"><img
        src="${photo}" alt="">
        <div>${name}
-       <button id="${index}" class="popup">수정</button>
+        <button id="${index}" class="popup" hidden>수정</button>
        </div>
         </div>`;
 
