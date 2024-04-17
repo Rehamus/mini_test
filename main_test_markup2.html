@@ -35,6 +35,11 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            -ms-overflow-style: none;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
         }
 
         .container {
@@ -58,7 +63,7 @@
         }
 
 
-        .backblack {
+        body .backblack {
             /*수정창 생성시 외부의 반투명한 검정 창'(비활성화)*/
             visibility: hidden;
             position: fixed;
@@ -124,7 +129,8 @@
 
         .photo>img {
             margin-top: 20px;
-            margin-left: 10px border-radius: 5px;
+            margin-left: 10px;
+            border-radius: 5px;
         }
 
         .info {
@@ -161,6 +167,9 @@
 
         .pos {
             margin: 20px 0px 30px 0px;
+        }
+        .main_01{
+            transform: translateY(12%);
         }
 
         .main_01 .swiper {
@@ -220,18 +229,18 @@
         }
 
         .main_02 {
+            
             /*하단 스와이프*/
-            margin-top: 50px;
-            border: 5px solid transparent;
+            margin-top: 150px;
             position: relative;
             height: 600px;
-            width: 100%;
-            margin-left: 3%;
+            width: 95%;
+
         }
 
         .main_02 .box2 {
             /* 카드 등록 박스*/
-            background-color: transp;
+            transform: translateX(2.5%);
             position: relative;
             top: -115%;
             left: 101%;
@@ -251,8 +260,8 @@
         .main_02 .card_main {
             /*하단 스와이프 배경색 설정*/
             position: absolute;
-            width: 70%;
-            height: 100%;
+            width: 78%;
+            height: 90%;
             background-color: transparent;
         }
 
@@ -344,6 +353,7 @@
             z-index: 400;
             margin-top: 360px;
             margin-right: -80px;
+            transform: scale(1.2);
         }
 
         .rounded-image {
@@ -371,7 +381,7 @@
     <!-- 매인 상단 -->
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="main_01 swiper top_mySwiper">
         <div class="parallax-bg" style="
-              background-image: url(https://blog.kakaocdn.net/dn/qwCgZ/btsGG57DYIP/KUDlPSdr8TsGNkJkQT8Mlk/top%20slider.png?attach=1&knm=img.png); //
+              background-image: url(https://blog.kakaocdn.net/dn/qwCgZ/btsGG57DYIP/KUDlPSdr8TsGNkJkQT8Mlk/top%20slider.png?attach=1&knm=img.png); 
               background-color:transparent;
             " data-swiper-parallax="-23%"></div>
         <div class="swiper-wrapper">
@@ -460,7 +470,7 @@
 
         centeredSlides: true,
         slidesPerView: 4,
-        spaceBetween: 30,
+        spaceBetween: 85,
         autoHeight: true,
         autoplay: { delay: 2500, disableOnInteraction: false },
         coverflowEffect: {
