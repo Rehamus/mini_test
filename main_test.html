@@ -8,15 +8,16 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Demo styles -->
     <style>
-        body {
+        body {/*몸통*/
             padding: 0;
             margin: 0;
         }
 
-        .container {
+        .container {/*수정창 (비활성화)'*/
             visibility: hidden;
             position: fixed;
             z-index: 1000;
@@ -28,12 +29,12 @@
             background-color: white;
         }
 
-        .container.show {
+        .container.show {/*수정창 (활성화)'*/
             visibility: visible;
         }
 
 
-        .backblack {
+        .backblack {/*수정창 생성시 외부의 반투명한 검정 창'(비활성화)*/
             visibility: hidden;
             position: fixed;
             content: "";
@@ -44,7 +45,7 @@
             z-index: 900;
         }
 
-        .backblack.show {
+        .backblack.show {/*수정창 생성시 외부의 반투명한 검정 창'(활성화)*/
             visibility: visible;
         }
 
@@ -103,12 +104,12 @@
         .info1 {
             margin-top: 10px;
             margin-bottom: 10px;
-            font-size: 130%;
+            /* font-size: 130%; */
         }
 
         .info2 {
             margin-bottom: 10px;
-            font-size: 130%;
+            /* font-size: 130%; */
         }
 
         .pos {
@@ -121,7 +122,7 @@
             background: #000;
         }
 
-        .main_01 .swiper-slide {
+        .main_01 .swiper-slide {/*상단 스와이프 슬라이드 변형*/
             font-size: 18px;
             color: #fff;
             -webkit-box-sizing: border-box;
@@ -132,7 +133,7 @@
             margin-right: 30px;
         }
 
-        .main_01 .parallax-bg {
+        .main_01 .parallax-bg {/*상단 스와이프 배경이미지*/
             position: absolute;
             left: 0;
             top: 0;
@@ -143,23 +144,22 @@
             background-position: center;
         }
 
-        .main_01 .swiper-slide .title {
+        .main_01 .swiper-slide .title {/*상단 스와이프 타이틀 글자 '9해줘'*/
             font-size: 110px;
             font-weight: 300;
         }
 
-        .main_01 .swiper-slide .subtitle {
+        .main_01 .swiper-slide .subtitle {/*상단 스와이프 서브 타이틀 글자 '팀소개'*/
             font-size: 55px;
         }
 
-        .main_01 .swiper-slide .text {
+        .main_01 .swiper-slide .text {/*상단 스와이프 내부 글자*/
             font-size: 28px;
             max-width: 700px;
             line-height: 1;
         }
 
-        .main_02 {
-            /* 스와이프 카드*/
+        .main_02 {/*하단 스와이프*/
             margin-top: 20px;
             border: 5px solid red;
             position: relative;
@@ -167,8 +167,7 @@
             width: 100%;
         }
 
-        .main_02 .box2 {
-            /* 카드 등록*/
+        .main_02 .box2 {/* 카드 등록 박스*/
             position: relative;
             top: -100%;
             left: 100%;
@@ -186,42 +185,19 @@
             transition: all .4s;
         }
 
-        .main_02 .box2 p {
-            /* 카드 등록*/
-            position: absolute;
-            left: 0%;
-            height: 100%;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .main_02 .box2 p:last-child {
-            /* 카드 등록*/
-            left: 50%;
-            height: 100%;
-            width: 50%;
-        }
-
-        .main_02 .box2 p:hover {
-            font-weight: bolder;
-            font-size: 4rem;
-            color: red;
-            border: 50px solid red;
-        }
-
-        .main_02 .card_main {
+        .main_02 .card_main {/*하단 스와이프 배경색 설정*/
             position: absolute;
             width: 70%;
             height: 100%;
             background-color: rgb(12, 12, 12);
         }
 
-        .main_02 .swiper {
+        .main_02 .swiper {/*카드 전채 크기조절*/
             width: 110%;
             height: 100%;
         }
 
-        .main_02 .swiper-slide {
+        .main_02 .swiper-slide {/*스와이프 카드 배경값*/
             text-align: center;
             font-size: 18px;
             background: #fff;
@@ -230,21 +206,24 @@
             align-items: center;
         }
 
-        .main_02 .swiper-slide img {
+        .main_02 .swiper-slide img {/*카드 이미지 크기 조절*/
             display: block;
             width: 390px;
             height: 500px;
             object-fit: cover;
         }
 
-        .main_02 .swiper-slide div {
+        .main_02 .swiper-slide div {/*카드의 글자 크기조절*/
             position: absolute;
             top: 90%;
             width: 100%;
             height: 20%;
+
+        }.main_02 .popup {/*카드의 버튼 크기조절*/
+
         }
 
-        .nextmap>div {
+        .nextmap>div {/* 카드 신규등록의 항목 크기조절*/
             display: inline-block;
             height: 400px;
             width: 300px;
@@ -253,17 +232,17 @@
 </head>
 
 <body>
-       <!-- 매인 상새패이지 -->
-       <div class="container" id="container">
+    <!-- 매인 상새패이지 -->
+    <div class="container" id="container">
         <div class="place">
             <h1>팀원소개</h1>
             <button id="updatebtn">수정</button>
-
             <button id="deletebtn">삭제</button>
         </div>
+        <div class="container2" id="container2"></div>
     </div>
 
-    <div class="backblack">
+    <div class="backblack">    <!-- 수정장 뒤의 검은 창 -->
     </div>
 
     <!-- 매인 상단 -->
@@ -297,279 +276,262 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
     <!-- 매인 하단 -->
     <section class="main_02">
         <section class="card_main">
             <div class="swiper bottom_mySwiper">
                 <div class="swiper-wrapper" id="swipe_card">
-                    <div class="swiper-slide"><img
-                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
-                        <div>내용<button>01</button></div>
-                    </div>
-                    <div class="swiper-slide"><img
-                            src="https://i.pinimg.com/236x/fd/95/91/fd9591462b88e8278d42b840f63a58f1.jpg" alt="">
-                            
-                                <div>내용<button class="popup"></button></div>
-                    </div>
+                        <!-- 이 위치에 카드생성됨 -->
                 </div>
             </div>
             <div class="box2">
                 <div class="nextmap">
-                    <div>
-                        <input type="text" id="photo_n"placeholder="photo">
-                        <input type="text" id="name_n"placeholder="name">
-                        <input type="text" id="birthday_n"placeholder="birthday">
-                        <input type="text" id="mbti_n"placeholder="mbti">
-                        <input type="text" id="strengths_n"placeholder="strengths">
-                        <input type="text" id="collaborationStyle_n"placeholder="collaborationStyle">
-                        <input type="text" id="blogURL_n"placeholder="blogURL">
-                        <button id="new_btn">등록</button>
+                    <div><!-- 카드 신규 등록 -->
+                        <input type="text" id="photo_n" placeholder="photo">
+                        <input type="text" id="name_n" placeholder="name">
+                        <input type="text" id="birthday_n" placeholder="birthday">
+                        <input type="text" id="mbti_n" placeholder="mbti">
+                        <input type="text" id="strengths_n" placeholder="strengths">
+                        <input type="text" id="collaborationStyle_n" placeholder="collaborationStyle">
+                        <input type="text" id="blogURL_n" placeholder="blogURL">
+                        <button id="new_btn">등록</button><!-- 버튼 선택시 변경됨 -->
                     </div>
-                    <select name="" id="index_s">
-                        <option selected>-- 선택 --</option>
-                    </select>
                 </div>
             </div>
         </section>
     </section>
-
-
-
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- 프로필 스와이퍼 스크립트-->
 <script>
+    var swiper = new Swiper(".top_mySwiper", {
+        speed: 600,
+        parallax: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 
+    var swiper = new Swiper(".bottom_mySwiper", {
+        effect: "coverflow",
 
-
-
-var swiper = new Swiper(".top_mySwiper", {
-    speed: 600,
-    parallax: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
-var swiper = new Swiper(".bottom_mySwiper", {
-    effect: "coverflow",
-    
-    centeredSlides: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
-    autoHeight : true,
-    autoplay: {delay: 2500, disableOnInteraction: false},
-    coverflowEffect: {
-        rotate: 20,
-        stretch: 20,
-        depth: 10,
-        modifier: 1,
-    },
-    slidesOffsetBefore : 3,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
-
-
+        centeredSlides: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        autoHeight: true,
+autoplay: { delay: 2500, disableOnInteraction: false },
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 20,
+            depth: 10,
+            modifier: 1,
+        },
+        slidesOffsetBefore: 3,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
 </script>
+
 <script type="module">
-// Import the functions you need from the SDKs you need
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+    // Import the functions you need from the SDKs you need
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { collection, doc, getDocs, getFirestore, query, setDoc, updateDoc, where, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCXk7T2TbT4ja4Xs6JTGiYBqwEdaGDRyZg",
-    authDomain: "miniteamwebsite.firebaseapp.com",
-    projectId: "miniteamwebsite",
-    storageBucket: "miniteamwebsite.appspot.com",
-    messagingSenderId: "932241178765",
-    appId: "1:932241178765:web:add7a2d24be400fb15e2c4",
-    measurementId: "G-HHKFJGGTNY"
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app);
-
-// document.getElementById('updatebtn').addEventListener('click', async () => {
-$('#updatebtn').click(async function () {
-    let photo = document.querySelector('img').getAttribute('src');
-    let name = $('#name').val();
-    let birthday = $('#birthday').val();
-    let mbti = $('#mbti').val();
-    let strengths = $('#strengths').val();
-    let collaborationStyle = $('#collaborationStyle').val();
-    let blogURL = $('#blogURL').val();
-    let index = $('#index').val();
-
-    let up = {
-        photo: photo,
-        name: name,
-        birthday: birthday,
-        mbti: mbti,
-        strengths: strengths,
-        collaborationStyle: collaborationStyle,
-        blogURL: blogURL,
-        index: index
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXk7T2TbT4ja4Xs6JTGiYBqwEdaGDRyZg",
+        authDomain: "miniteamwebsite.firebaseapp.com",
+        projectId: "miniteamwebsite",
+        storageBucket: "miniteamwebsite.appspot.com",
+        messagingSenderId: "932241178765",
+        appId: "1:932241178765:web:add7a2d24be400fb15e2c4",
+        measurementId: "G-HHKFJGGTNY"
     };
-    console.log(up)
-    const updateID = doc(db, "teamMembers", index);
-    await updateDoc(updateID, up);
-
-    alert("수정했습니다!");
-    window.location.reload();
-});
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
 
 
-// 스냅샷과 쿼리로 문서 id 출력.
-const q = query(collection(db, "teamMembers"), where("index", "==", "1713233837953."));
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-    let row = doc.data();
+    // 드롭박스 선택 시 수정화면 띄움.
 
-    let photo = row['photo']
-    let name = row['name']
-    let birthday = row['birthday']
-    let mbti = row['mbti']
-    let strengths = row['strengths']
-    let collaborationStyle = row['collaborationStyle']
-    let blogURL = row['blogURL']
-    let index = row['index']
+    // 스냅샷과 쿼리로 문서 출력.
+    async function fetchByIndex(e) {
+        const q = query(collection(db, "teamMembers"), where("index", "==", e));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            let row = doc.data();
 
-    let temp_html = `
+            let photo = row['photo']
+            let name = row['name']
+            let birthday = row['birthday']
+            let mbti = row['mbti']
+            let strengths = row['strengths']
+            let collaborationStyle = row['collaborationStyle']
+            let blogURL = row['blogURL']
+            let index = row['index']
+
+            /*수정창 생성*/
+            let temp_html = `
        <div class="box">
            <div class="first">
                <div class="photo">
                    <img id="photo" src="${photo}" alt="사진" width="300px" height="auto">
                </div>
                <div class="info">
-                   <div class="info1"><input type="text" id="name" value="${name}"> <span id="ph"></span></div>
-                   <div class="info1"><input type="text" id="birthday" value="${birthday}"><span id="time"></span></div>
-                   <div class="info1"><input type="text" id="mbti" value="${mbti}"><span id="scores"></span></div>
+                   <div class="info1"><input type="text" id="photo" value="${photo}"placeholder="photo"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="name" value="${name}" placeholder="name"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="birthday" value="${birthday}" placeholder="birthday"><span id="time"></span></div>
+                   <div class="info1"><input type="text" id="mbti" value="${mbti}" placeholder="mbti"><span id="scores"></span></div>
                </div>
            </div>
        </div>
        <div class="character">
-           <div class="info2"><input type="text" id="strengths" value="${strengths}"></div>
-           <div class="info2"><input type="text" id="collaborationStyle" value="${collaborationStyle}"></div>
-           <div class="info2"><input type="text" id="blogURL" value="${blogURL}"></div>
-           <div class="info2"><input type="hidden" id="index" value="${index}"></div>
+           <div class="info2"><input type="text" id="strengths" value="${strengths}" placeholder="strengths"></div>
+           <div class="info2"><input type="text" id="collaborationStyle" value="${collaborationStyle}" placeholder="collaborationStyle"></div>
+           <div class="info2"><input type="text" id="blogURL" value="${blogURL}" placeholder="blogURL"></div>
+           <div class="info2"><input type="hidden" id="index" value="${index}" placeholder="index"></div>
        </div>`
+            $('#container2').empty();
+            $('#container2').append(temp_html);
+        });
+    }
 
-    $('#container').append(temp_html);
-});
-document.getElementById('deletebtn').addEventListener('click', async () => {
-    const name = "이세비";
-    const birthday = "991120";
-    const mbti = "ISTP";
-    const strengths = "책임감";
-    const collaborationStyle = "브레인스토밍 좋아합니다.";
-    const blogURL = "Tistory";
+    // 카드 수정
+    // document.getElementById('updatebtn').addEventListener('click', async () => {
+    $('#updatebtn').click(async function () {
+        let photo = document.querySelector('img').getAttribute('src');
+        let name = $('#name').val();
+        let birthday = $('#birthday').val();
+        let mbti = $('#mbti').val();
+        let strengths = $('#strengths').val();
+        let collaborationStyle = $('#collaborationStyle').val();
+        let blogURL = $('#blogURL').val();
+        let index = $('#index').val();
 
-    try {
-        const docRef = await addDoc(collection(db, "teamMembers"), {
+        let up = {
+            photo: photo,
             name: name,
             birthday: birthday,
             mbti: mbti,
             strengths: strengths,
             collaborationStyle: collaborationStyle,
-            blogURL: blogURL
-        });
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-});
+            blogURL: blogURL,
+            index: index
+        };
+        console.log(up)
+        const updateID = doc(db, "teamMembers", index);
+        await updateDoc(updateID, up);
 
-// 카드 가져오기
-async function fetchData() {
-    const querySnapshot = await getDocs(collection(db, "teamMembers"));
-    querySnapshot.forEach((doc) => {
-        const row = doc.data();
+        alert("수정했습니다!");
+        window.location.reload();
+    });
 
-        let photo = row['photo']
-        let name = row['name']
-        let birthday = row['birthday']
-        let mbti = row['mbti']
-        let strengths = row['strengths']
-        let collaborationStyle = row['collaborationStyle']
-        let blogURL = row['blogURL']
-        let index = row['index']
+    // 카드 삭제
+    document.getElementById('deletebtn').addEventListener('click', async () => {
+        let index = $('#index').val();
+        console.log(index)
+        let result = confirm("삭제하시겠습니까?");
+        if (result) {
+            await deleteDoc(doc(db, "teamMembers", index));
+            alert("삭제했습니다!");
+            window.location.reload();
+        }
+    });
 
-        const card = `
+    // 카드 가져오기(읽기)
+    async function fetchData() {
+        const querySnapshot = await getDocs(collection(db, "teamMembers"));
+        querySnapshot.forEach((doc) => {
+            const row = doc.data();
+
+            let photo = row['photo']
+            let name = row['name']
+            let birthday = row['birthday']
+            let mbti = row['mbti']
+            let strengths = row['strengths']
+            let collaborationStyle = row['collaborationStyle']
+            let blogURL = row['blogURL']
+            let index = row['index']
+
+            const card = `
        <div class="swiper-slide" id="swipe_card"><img
        src="${photo}" alt="">
        <div>${name}
-       <button id="${index}" class="popup">수정</button>
+        <button id="${index}" class="popup">수정</button>
        </div>
         </div>`;
+            $('#swipe_card').prepend(card);
 
-        const del = `
-        <option selected>${index}</option>`;
 
-        $('#swipe_card').prepend(card);
+            $('.bottom_mySwiper .popup').click(function () {
 
-        $('#index_s').append(del);
+                const selectIndex = $(this).attr('id');// 카드의 버튼 선택시 수정창 꺼냄
+                console.log(selectIndex);
+                fetchByIndex(selectIndex);
+                $('#' + selectIndex).click();
 
-        $('.bottom_mySwiper div div div').click(function () {
-            $('.container').addClass('show')
-            $('.backblack').addClass('show')
-        
+
+                $('.container').addClass('show')// 카드 수정창 보임
+                $('.backblack').addClass('show')
+
+            });
+            $('.backblack').click(function () {
+                $('.container').removeClass('show') // 카드 수정창 숨김
+                $('.backblack').removeClass('show')
+
+            });
         });
-        $('.backblack').click(function () {
-            $('.container').removeClass('show')
-            $('.backblack').removeClass('show')
-        
-        });
+
+
+    }
+
+    // 생성(회원 등록)
+    $('#new_btn').click(async function () {
+        let photo = $('#photo_n').val();
+        let name = $('#name_n').val();
+        let birthday = $('#birthday_n').val();
+        let mbti = $('#mbti_n').val();
+        let strengths = $('#strengths_n').val();
+        let collaborationStyle = $('#collaborationStyle_n').val();
+        let blogURL = $('#blogURL_n').val();
+        let index = String(Date.now() + Math.random())
+
+        let up = {
+            photo: photo,
+            name: name,
+            birthday: birthday,
+            mbti: mbti,
+            strengths: strengths,
+            collaborationStyle: collaborationStyle,
+            blogURL: blogURL,
+            index: index
+        };
+
+        await setDoc(doc(db, "teamMembers", index), up);
+
+        alert("가입했습니다!");
+
+        window.location.reload();
+
+
     });
-}
 
-$('#new_btn').click(async function () {
-    let photo = $('#photo_n').val();
-    let name = $('#name_n').val();
-    let birthday = $('#birthday_n').val();
-    let mbti = $('#mbti_n').val();
-    let strengths = $('#strengths_n').val();
-    let collaborationStyle = $('#collaborationStyle_n').val();
-    let blogURL = $('#blogURL_n').val();
-    let index = String(Date.now() + Math.random())
-
-    let up = {
-        photo: photo,
-        name: name,
-        birthday: birthday,
-        mbti: mbti,
-        strengths: strengths,
-        collaborationStyle: collaborationStyle,
-        blogURL: blogURL,
-        index: index
-    };
-
-    await setDoc(doc(db, "teamMembers", index), up);
-
-    alert("태스트1");
-
-    window.location.reload();
-
-
-});
-
-fetchData();// 함수 실행
+    fetchData();// 함수 실행
 </script>
 
 </html>
