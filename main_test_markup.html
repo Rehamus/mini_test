@@ -124,14 +124,14 @@
 
         .photo>img {
             margin-top: 20px;
-            border-radius: 5px;
+            margin-left: 10px border-radius: 5px;
         }
 
         .info {
             margin-left: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: right;
             width: 200px;
             height: 200px;
         }
@@ -139,12 +139,24 @@
         .info1 {
             margin-top: 10px;
             margin-bottom: 10px;
-            /* font-size: 130%; */
         }
 
         .info2 {
+            margin-top: 10px;
             margin-bottom: 10px;
-            /* font-size: 130%; */
+            margin-left: 40px;
+        }
+
+        /*입력칸 스타일 변경*/
+        .info1 input,
+        .info2 input {
+            font-size: 20px;
+            width: 90%;
+            padding: 8px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         .pos {
@@ -219,12 +231,12 @@
 
         .main_02 .box2 {
             /* 카드 등록 박스*/
+            background-color: transp;
             position: relative;
-            top: -110%;
+            top: -115%;
             left: 101%;
-            height: 100%;
-            width: 40%;
-            background-color: transparent;
+            height: 80%;
+            width: 30%;
             z-index: 200;
             display: flex;
             text-align: center;
@@ -234,7 +246,6 @@
             box-sizing: border-box;
             transition: all .4s;
         }
-
 
 
         .main_02 .card_main {
@@ -255,7 +266,7 @@
             /*스와이프 카드 배경값*/
             text-align: center;
             font-size: 30px;
-            background: white;
+            background: rgb(75, 75, 75);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -302,8 +313,41 @@
         .nextmap>div {
             /* 카드 신규등록의 항목 크기조절*/
             display: inline-block;
-            height: 200px;
+            height: 80px;
             width: 300px;
+        }
+
+        .nextmap>div input {
+            font-size: 12px;
+            color: black;
+            width: 70%;
+            padding: 8px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .nextmap>div>button {
+            border: 2px solid white;
+            background-image: linear-gradient(to bottom, #7b7cb3, #B1B2FF);
+            padding: 5px 50px;
+            color: #692c69;
+            font-size: 20px;
+            border-radius: 10px;
+            height: 50px;
+        }
+
+        /* 영역구분 이미지*/
+        .dividing_image {
+            position: relative;
+            z-index: 400;
+            margin-top: 360px;
+            margin-right: -80px;
+        }
+
+        .rounded-image {
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -327,7 +371,7 @@
     <!-- 매인 상단 -->
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="main_01 swiper top_mySwiper">
         <div class="parallax-bg" style="
-              background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FWF2G5%2FbtsGGkpULyT%2Fui5KXSVRfaXlEHaJVPyxAk%2Fimg.png);
+              background-image: url(https://blog.kakaocdn.net/dn/qwCgZ/btsGG57DYIP/KUDlPSdr8TsGNkJkQT8Mlk/top%20slider.png?attach=1&knm=img.png); //
               background-color:transparent;
             " data-swiper-parallax="-23%"></div>
         <div class="swiper-wrapper">
@@ -336,10 +380,12 @@
                 <div class="subtitle" data-swiper-parallax="-200"></div>
                 <div class="text" data-swiper-parallax="-100">
                     <p>
-                        모두 I로 구성된 백엔드 개발자 지망생들
+                        모두 "I" 로 구성된 백엔드 개발자 지망생들
                     </p>
                 </div>
             </div>
+
+
             <div class="swiper-slide" style="margin-left: 45%;">
                 <div class="subtitle" data-swiper-parallax="-200">팀목표</div>
                 <div class="text" data-swiper-parallax="-100">
@@ -353,12 +399,14 @@
                     </p>
                 </div>
             </div>
+
             <div class="swiper-button-next" style="margin-right:30px;">
                 <div style="color: gray;">MISSION</div>
             </div>
             <div class="swiper-button-prev"></div>
         </div>
     </div>
+
 
     <!-- 매인 하단 -->
     <section class="main_02">
@@ -369,16 +417,22 @@
                 </div>
             </div>
             <div class="box2">
+                <!--경계 나누는 이미지 =우주인-->
+                <div class="dividing_image">
+                    <img src="https://blog.kakaocdn.net/dn/cRErQZ/btsGGYAKyZr/YcHKakkwNjmIsuVwYMHw70/astronaut.png?attach=1&knm=img.png"
+                        width="200px">
+                </div>
                 <div class="nextmap">
                     <div><!-- 카드 신규 등록 -->
-                        <input type="text" id="photo_n" placeholder="photo">
-                        <input type="text" id="name_n" placeholder="name">
-                        <input type="text" id="birthday_n" placeholder="birthday">
-                        <input type="text" id="mbti_n" placeholder="mbti">
-                        <input type="text" id="strengths_n" placeholder="strengths">
-                        <input type="text" id="collaborationStyle_n" placeholder="collaborationStyle">
-                        <input type="text" id="blogURL_n" placeholder="blogURL">
-                        <button id="new_btn">등록</button><!-- 버튼 선택시 변경됨 -->
+                        <input type="text" id="photo_n" placeholder="이미지URL">
+                        <input type="text" id="name_n" placeholder="이름">
+                        <input type="text" id="birthday_n" placeholder="생년월일">
+                        <input type="text" id="mbti_n" placeholder="MBTI">
+                        <input type="text" id="strengths_n" placeholder="장점">
+                        <input type="text" id="collaborationStyle_n" placeholder="협업스타일">
+                        <input type="text" id="blogURL_n" placeholder="블로그주소">
+                        <br>
+                        <button id="new_btn">탑승하기</button><!-- 버튼 선택시 변경됨 -->
                     </div>
                 </div>
             </div>
@@ -421,6 +475,7 @@
             el: ".swiper-pagination",
             clickable: true,
         },
+
     });
 </script>
 
@@ -473,20 +528,20 @@
        <div class="box">
            <div class="first">
                <div class="photo">
-                   <img id="photo" src="${photo}" alt="사진" width="300px" height="auto">
+                   <img id="photo" class="rounded-image" src="${photo}" alt="사진" height="300px" max-width="200" >
                </div>
                <div class="info">
-                   <div class="info1"><input type="text" id="photo" value="${photo}"placeholder="photo"> <span id="ph"></span></div>
-                   <div class="info1"><input type="text" id="name" value="${name}" placeholder="name"> <span id="ph"></span></div>
-                   <div class="info1"><input type="text" id="birthday" value="${birthday}" placeholder="birthday"><span id="time"></span></div>
-                   <div class="info1"><input type="text" id="mbti" value="${mbti}" placeholder="mbti"><span id="scores"></span></div>
+                   <div class="info1"><input type="text" id="photo" value="${photo}"placeholder="이미지URL"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="name" value="${name}" placeholder="이름"> <span id="ph"></span></div>
+                   <div class="info1"><input type="text" id="birthday" value="${birthday}" placeholder="생년월일"><span id="time"></span></div>
+                   <div class="info1"><input type="text" id="mbti" value="${mbti}" placeholder="MBTI"><span id="scores"></span></div>
                </div>
            </div>
        </div>
        <div class="character">
-           <div class="info2"><input type="text" id="strengths" value="${strengths}" placeholder="strengths"></div>
-           <div class="info2"><input type="text" id="collaborationStyle" value="${collaborationStyle}" placeholder="collaborationStyle"></div>
-           <div class="info2"><input type="text" id="blogURL" value="${blogURL}" placeholder="blogURL"></div>
+           <div class="info2"><input type="text" id="strengths" value="${strengths}" placeholder="장점"></div>
+           <div class="info2"><input type="text" id="collaborationStyle" value="${collaborationStyle}" placeholder="협업스타일"></div>
+           <div class="info2"><input type="text" id="blogURL" value="${blogURL}" placeholder="블로그주소"></div>
            <div class="info2"><input type="hidden" id="index" value="${index}" placeholder="index"></div>
        </div>`
             $('#container2').empty();
@@ -586,8 +641,8 @@
 
     // 생성(회원 등록)
     $('#new_btn').click(async function () {
-        let photo = $('#photo_n').val();
-        let name = $('#name_n').val();
+        // 사진등록이 없을 경우, 특정 초기값 이미지URL이 등록
+        let photo = $('#photo_n').val() || 'https://cdn3d.iconscout.com/3d/premium/thumb/astronaut-riding-on-rocket-5815114-4873864.png';
         let birthday = $('#birthday_n').val();
         let mbti = $('#mbti_n').val();
         let strengths = $('#strengths_n').val();
