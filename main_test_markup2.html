@@ -515,9 +515,7 @@
     const analytics = getAnalytics(app);
     const db = getFirestore(app);
 
-
-    // 드롭박스 선택 시 수정화면 띄움.
-
+    
     // 스냅샷과 쿼리로 문서 출력.
     async function fetchByIndex(e) {
         const q = query(collection(db, "teamMembers"), where("index", "==", e));
